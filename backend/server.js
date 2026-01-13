@@ -13,14 +13,17 @@ const limiter = rateLimit({
 });
 
 const app = express();
-app.use(cors(
-    { "origin": "*"}
-));
+app.use(cors());
+app.options("*", cors());
+
 app.use(express.json());
-app.use(limiter);
+
+app.use("/api", (req, res, next) => {
+  if (req.method === "OPTIONS") return next();
+  return limiter(req, res, next);
+});
 
 app.use("/api", apiRouter);
-
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 3000;
