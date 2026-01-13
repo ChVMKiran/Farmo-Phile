@@ -29,7 +29,7 @@ const CropRotation = () => {
 
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:3000/api/crop-rotation", {
+      const response = await fetch("https://farmo-phile-backend.chvmkiran.me/api/crop-rotation", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

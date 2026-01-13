@@ -41,7 +41,7 @@ const YieldPrediction = () => {
 
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:3000/api/predict-yield", {
+      const response = await fetch("https://farmo-phile-backend.chvmkiran.me/api/predict-yield", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

@@ -19,7 +19,7 @@ app.options("/", cors());
 app.use(express.json());
 
 app.use("/api", (req, res, next) => {
-  if (req.method === "OPTIONS") return next();
+  if (req.method in ["OPTIONS", "GET"]) return next();
   return limiter(req, res, next);
 });
 

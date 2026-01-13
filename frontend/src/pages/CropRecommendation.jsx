@@ -35,7 +35,7 @@ const CropRecommendation = () => {
 
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:3000/api/crop", {
+      const response = await fetch("https://farmo-phile-backend.chvmkiran.me/api/crop", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

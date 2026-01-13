@@ -22,7 +22,7 @@ const FertilizerRecommendation = () => {
     if (!crop || !nitrogen || !phosphorus || !potassium || !ph) { toast.error("Please fill all fields"); return; }
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:3000/api/fertilizer-recommend", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ crop: formData.crop, nitrogen: parseFloat(formData.nitrogen), phosphorus: parseFloat(formData.phosphorus), potassium: parseFloat(formData.potassium), ph: parseFloat(formData.ph) }) });
+      const response = await fetch("https://farmo-phile-backend.chvmkiran.me/api/fertilizer-recommend", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ crop: formData.crop, nitrogen: parseFloat(formData.nitrogen), phosphorus: parseFloat(formData.phosphorus), potassium: parseFloat(formData.potassium), ph: parseFloat(formData.ph) }) });
       const data = await response.json();
       if (data.error) throw new Error(data.error);
       setResult(data);
