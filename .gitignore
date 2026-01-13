@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+ml/venv/
+
+# Node
+node_modules/
+
+# Environment variables
+.env
+
+# OS
+.DS_Store
+
+#HF repo
+ml/farmo-phile-ml
+
+#models
+*.pkl
