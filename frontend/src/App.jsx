@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
 import Layout from "@/components/layout/Layout";
+import { useIsMobile } from "@/hooks/use-mobile";
 import Home from "@/pages/Home";
 import CropRecommendation from "@/pages/CropRecommendation";
 import YieldPrediction from "@/pages/YieldPrediction";
@@ -17,16 +18,16 @@ const queryClient = new QueryClient();
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const isMobile = useIsMobile();
 
   if (isLoading) {
     return <LoadingScreen onComplete={() => setIsLoading(false)} />;
   }
-
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
         <Toaster />
-        <CustomCursor />
+        {!isMobile && <CustomCursor />}
         <BrowserRouter>
           <Layout>
             <Routes>

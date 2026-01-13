@@ -23,7 +23,7 @@
         <script>
             window.addEventListener("load", () => {
                 fetch("https://farmo-phile-backend.chvmkiran.me/api/health")
-                    .then((res) => res.json())
+                    .then((res) => res.text())
                     .then((data) => console.log(data))
                     .catch((err) => console.error(err));
             });
