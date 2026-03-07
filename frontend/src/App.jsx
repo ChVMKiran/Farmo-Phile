@@ -37,7 +37,7 @@ const App = () => {
               <Route path="/yield-prediction" element={<YieldPrediction />} />
               <Route path="/crop-rotation" element={<CropRotation />} />
               <Route path="/fertilizer-recommendation" element={<FertilizerRecommendation />} />
-              <Route path="/analytics" element={<Analytics />} />
+              <Analytics />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>
