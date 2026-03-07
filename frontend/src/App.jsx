@@ -37,12 +37,12 @@ const App = () => {
               <Route path="/yield-prediction" element={<YieldPrediction />} />
               <Route path="/crop-rotation" element={<CropRotation />} />
               <Route path="/fertilizer-recommendation" element={<FertilizerRecommendation />} />
-              <Analytics />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>
         </BrowserRouter>
       </ThemeProvider>
+      <Analytics />
     </QueryClientProvider>
   );
 };
