@@ -13,6 +13,7 @@ import FertilizerRecommendation from "@/pages/FertilizerRecommendation";
 import NotFound from "@/pages/NotFound";
 import CustomCursor from "@/components/CustomCursor";
 import LoadingScreen from "@/components/LoadingScreen";
+import { Analytics } from "@vercel/analytics/react"
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ const App = () => {
               <Route path="/yield-prediction" element={<YieldPrediction />} />
               <Route path="/crop-rotation" element={<CropRotation />} />
               <Route path="/fertilizer-recommendation" element={<FertilizerRecommendation />} />
+              <Route path="/analytics" element={<Analytics />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>
