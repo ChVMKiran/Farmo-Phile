@@ -4,7 +4,8 @@ import joblib
 
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, classification_report
+from sklearn.metrics import accuracy_score, classification_report, precision_score, recall_score, f1_score
+
 
 
 # 1. Load dataset
@@ -32,8 +33,12 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 
-print("Model Accuracy:", accuracy)
-print("\nClassification Report:\n")
+print(f"Accuracy : {accuracy_score(y_test, y_pred) * 100:.2f}%")
+print(f"Precision: {precision_score(y_test, y_pred, average='weighted') * 100:.2f}%")
+print(f"Recall   : {recall_score(y_test, y_pred, average='weighted') * 100:.2f}%")
+print(f"F1 Score : {f1_score(y_test, y_pred, average='weighted') * 100:.2f}%")
+
+print("\nClassification Report:")
 print(classification_report(y_test, y_pred))
 
 # 7. Save model
